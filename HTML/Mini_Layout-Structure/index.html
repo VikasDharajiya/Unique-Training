@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Layout Structure</title>
+  </head>
+  <body>
+    <header>
+      <h1>Abc Solutions</h1>
+      <nav>
+        <a href="#about">About</a> | <a href="#services">Services</a> |
+        <a href="#product">Product</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Our Company</h2>
+        <div>
+          <p>
+            Abc is an IT company specializing in modern web development and
+            digital solutions for businesses worldwide.
+          </p>
+        </div>
+      </section>
+
+      <section id="services">
+        <h2>Our Services</h2>
+        <div>
+          <ul>
+            <li>Website Development</li>
+            <li>UI/UX Design</li>
+            <li>Software Solutions</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside>
+        <h3>Why Choose Us?</h3>
+        <div>
+          <p>-Trusted by 500+ clients</p>
+          <p>-Experienced developers</p>
+        </div>
+      </aside>
+
+      <hr />
+
+      <section id="product">
+        <h2>Featured Product</h2>
+
+        <div>
+          <h3>Wireless Headphones</h3>
+
+          <div>
+            <img src="../../assets/images/headphone.avif" width="200" />
+            <p class="description">
+              Premium wireless headphones with noise cancellation and long
+              battery life.
+            </p>
+          </div>
+
+          <h4>Product Specifications</h4>
+          <table border="1" cellpadding="10" cellspacing="0">
+            <tr>
+              <th>Feature</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <td>Battery Life</td>
+              <td>30 Hours</td>
+            </tr>
+            <tr>
+              <td>Connectivity</td>
+              <td>Bluetooth 5.2</td>
+            </tr>
+            <tr>
+              <td>Warranty</td>
+              <td>1 Year</td>
+            </tr>
+          </table>
+
+          <h4>Product Demo Video</h4>
+          <iframe
+            width="500"
+            height="300"
+            src="https://www.youtube.com/embed/tlcWiP7OLFI?si=ELebBdSY5msvzj4E"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <hr />
+      <p>Contact us: abc@gmail.com</p>
+      <p>&copy; 2025 Abc</p>
+    </footer>
+  </body>
+</html>
