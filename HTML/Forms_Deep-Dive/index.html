@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup & Contact Forms</title>
+  </head>
+  <body>
+    <h2>Signup Form</h2>
+
+    <form action="#" method="post" target="_self" enctype="multipart/form-data">
+      <label for="signup-name">Full Name:</label><br />
+      <input
+        type="text"
+        id="signup-name"
+        name="name"
+        placeholder="Enter your full name"
+        required
+      /><br /><br />
+
+      <label for="signup-email">Email Address:</label><br />
+      <input
+        type="email"
+        id="signup-email"
+        name="email"
+        placeholder="example@email.com"
+        required
+      /><br /><br />
+
+      <label for="signup-password">Password:</label><br />
+      <input
+        type="password"
+        id="signup-password"
+        name="password"
+        minlength="6"
+        required
+      /><br /><br />
+
+      <label for="signup-phone">Phone Number:</label><br />
+      <input
+        type="tel"
+        id="signup-phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        placeholder="10-digit number"
+        required
+      /><br /><br />
+
+      <label>Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="Male" required />
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="Female" />
+      <label for="female">Female</label>
+
+      <input type="radio" id="other" name="gender" value="Other" />
+      <label for="other">Other</label><br /><br />
+
+      <label for="dob">Date of Birth:</label><br />
+      <input type="date" id="dob" name="dob" required /><br /><br />
+
+      <label for="profile-pic">Upload Profile Picture:</label><br />
+      <input type="file" id="profile-pic" name="profile_pic" /><br /><br />
+
+      <label for="fav-color">Favorite Color:</label><br />
+      <input type="color" id="fav-color" name="color" /><br /><br />
+
+      <label for="skill-level">Skill Level (0-10):</label><br />
+      <input
+        type="range"
+        id="skill-level"
+        name="skill_level"
+        min="0"
+        max="10"
+      /><br /><br />
+
+      <label for="website">Portfolio Website:</label><br />
+      <input
+        type="url"
+        id="website"
+        name="website"
+        placeholder="https://example.com"
+      /><br /><br />
+
+      <label for="skills">Skills:</label><br />
+      <select id="skills" name="skills" required>
+        <option value="">--Select Skill--</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="react">React</option></select
+      ><br /><br />
+
+      <input type="checkbox" id="terms" name="terms" required />
+      <label for="terms">I agree to the terms and conditions</label><br /><br />
+
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+      <button type="button">Normal Button</button>
+    </form>
+
+    <hr />
+
+    <h2>Contact Us</h2>
+
+    <form action="#" method="post" target="_blank">
+      <label for="contact-name">Name:</label><br />
+      <input type="text" id="contact-name" name="name" required /><br /><br />
+
+      <label for="contact-email">Email:</label><br />
+      <input
+        type="email"
+        id="contact-email"
+        name="email"
+        required
+      /><br /><br />
+
+      <label for="subject">Subject:</label><br />
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        maxlength="50"
+      /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="3" required></textarea
+      ><br /><br />
+
+      <button type="submit">Send Message</button>
+      <button type="reset">Clear</button>
+    </form>
+  </body>
+</html>
