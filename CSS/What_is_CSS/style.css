@@ -1,0 +1,26 @@
+.section {
+  padding: 50px;
+  color: white;
+  text-align: center;
+}
+
+.section-one {
+  background-color: #3498db;
+}
+
+.section-two {
+  background-image: url("../../assets/images/bg-1.avif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section-three {
+  background-image: linear-gradient(
+      rgba(250, 6, 6, 0.601),
+      rgba(5, 206, 242, 0.632)
+    ),
+    url("../../assets/images/bg-1.avif");
+  background-size: cover;
+  background-position: center;
+}
