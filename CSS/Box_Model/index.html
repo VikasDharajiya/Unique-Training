@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model & Borders</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        margin: 10px;
+      }
+
+      .card {
+        width: 250px;
+        padding: 20px;
+        margin: 10px;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 15px 50px;
+        text-align: center;
+      }
+      .card img {
+        border-radius: 10%;
+        margin-bottom: 10px;
+      }
+      .card h2 {
+        margin: 10px 0 5px;
+      }
+
+      .card p {
+        margin: 0;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cards</h1>
+    <hr />
+    <div class="card-container">
+      <div class="card">
+        <img
+          src="../../assets/images/card-profile1.avif"
+          alt="profile picture"
+          width="200"
+        />
+        <h2>Stive</h2>
+        <p>Mern Stack Developer</p>
+      </div>
+
+      <div class="card">
+        <img
+          src="../../assets/images/card-profile2.avif"
+          width="200"
+          alt="profile picture"
+        />
+        <h2>Kelly</h2>
+        <p>UI Developer</p>
+      </div>
+
+      <div class="card">
+        <img
+          src="../../assets/images/card-profile3.avif"
+          width="150"
+          alt="profile picture"
+        />
+        <h2>Adam</h2>
+        <p>Python Developer</p>
+      </div>
+    </div>
+  </body>
+</html>
