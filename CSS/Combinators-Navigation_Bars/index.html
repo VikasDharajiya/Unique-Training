@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #191919;
+        padding: 15px 0;
+      }
+
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 12px;
+        font-weight: 500;
+
+        /* position: relative; */
+      }
+
+      .navbar a:hover {
+        background: #97bdb6;
+        color: #000;
+        border-radius: 4px;
+      }
+
+      .navbar a.active {
+        background: #97bdb6;
+        color: #000;
+        border-radius: 4px;
+      }
+
+      .section {
+        height: 100vh;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="section">Home Section</section>
+    <section id="about" class="section">About Section</section>
+    <section id="services" class="section">Services Section</section>
+    <section id="contact" class="section">Contact Section</section>
+  </body>
+</html>
