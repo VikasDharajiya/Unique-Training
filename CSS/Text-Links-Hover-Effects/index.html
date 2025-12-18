@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #111;
+        padding: 15px 40px;
+      }
+      .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .logo span {
+        color: red;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+      .nav-links li {
+        margin-left: 30px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: #ff0000;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ff0000;
+        transition: width 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><h1>Snoo<span>Z</span>e</h1></div>
+
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
