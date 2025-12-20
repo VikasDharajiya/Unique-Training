@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #f5f5f5;
+        padding: 40px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      .card p {
+        font-size: 16px;
+        font-weight: bold;
+        color: #4c4949;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="card">
+        <img src="img/camera.avif" alt="" />
+        <h3>Nikon D750</h3>
+        <p>RS:20000</p>
+      </div>
+
+      <div class="card">
+        <img src="img/car.avif" alt="" />
+        <h3>Toy Car</h3>
+        <p>RS:2500</p>
+      </div>
+
+      <div class="card">
+        <img src="img/cycle.avif" alt="" />
+        <h3>Bicycle</h3>
+        <p>RS:9000</p>
+      </div>
+
+      <div class="card">
+        <img src="img/gogeels.avif" alt="" />
+        <h3>Black</h3>
+        <p>RS:2200</p>
+      </div>
+
+      <div class="card">
+        <img src="img/headphone.avif" alt="" />
+        <h3>Headphone</h3>
+        <p>RS:8700</p>
+      </div>
+
+      <div class="card">
+        <img src="img/watch.avif" alt="" />
+        <h3>Watch</h3>
+        <p>RS:3200</p>
+      </div>
+
+      <div class="card">
+        <img src="img/keyboard.avif" alt="" />
+        <h3>Keyboard</h3>
+        <p>RS:7800</p>
+      </div>
+
+      <div class="card">
+        <img src="img/mobile.avif" alt="" />
+        <h3>I phone x</h3>
+        <p>RS:28000</p>
+      </div>
+
+      <div class="card">
+        <img src="img/shoes.avif" alt="" />
+        <h3>Nike shoe</h3>
+        <p>RS:9500</p>
+      </div>
+    </div>
+  </body>
+</html>
