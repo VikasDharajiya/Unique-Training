@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pagination {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 40px 0;
+      }
+
+      .pagination a {
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: #f4f4f4;
+        color: #111;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .pagination a:hover {
+        background: #04dbf7;
+      }
+
+      .pagination a.active {
+        background: #111;
+        color: white;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <a href="#">Prev</a>
+      <a class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">Next</a>
+    </div>
+  </body>
+</html>
