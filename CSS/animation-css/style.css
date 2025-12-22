@@ -1,0 +1,93 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+  padding: 50px;
+}
+
+/* Section */
+.content-section {
+  position: relative;
+  background: white;
+  padding: 60px;
+  border-radius: 16px;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Loader Overlay */
+.loader-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: hideLoader 3s forwards;
+  z-index: 10;
+}
+
+/* Loader */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #04dbf7;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader-overlay p {
+  margin-top: 15px;
+  color: #555;
+}
+
+/* Content */
+.content {
+  opacity: 0;
+  animation: showContent 0.6s ease forwards;
+  animation-delay: 3s;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #04dbf7;
+  color: #111;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hideLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes showContent {
+  to {
+    opacity: 1;
+  }
+}
