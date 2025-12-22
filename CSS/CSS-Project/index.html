@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="logo">
+          <span class="light">HB</span>
+          <span class="bold">Sphere</span>
+        </div>
+
+        <ul>
+          <li><a href="#">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Development</a></li>
+              <li><a href="#">SEO</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- hero section -->
+    <section class="hero">
+      <div class="loader-overlay">
+        <div class="loader"></div>
+        <p>Loading content...</p>
+      </div>
+      <div class="content">
+        <h1>Grow Your Business Online</h1>
+        <p>Modern, responsive, accessible websites built with clean CSS.</p>
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>Our Services</h2>
+
+      <div class="service-grid">
+        <div class="service-card">Web Design</div>
+        <div class="service-card">Development</div>
+        <div class="service-card">SEO Optimization</div>
+      </div>
+    </section>
+
+    <section class="portfolio">
+      <h2>Our Portfolio</h2>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img
+            src="../../assets/images/css-project-card-1.avif"
+            alt="Website Project"
+            loading="lazy"
+          />
+          <h3>Business Website</h3>
+          <p>Modern responsive design</p>
+        </div>
+
+        <div class="portfolio-card">
+          <img
+            src="../../assets/images/css-project-card-2.avif"
+            alt="App Project"
+            loading="lazy"
+          />
+          <h3>Mobile App UI</h3>
+          <p>Clean and minimal interface</p>
+        </div>
+
+        <div class="portfolio-card">
+          <img
+            src="../../assets/images/css-project-card-3.avif"
+            alt="Landing Page"
+            loading="lazy"
+          />
+          <h3>Landing Page</h3>
+          <p>High conversion layout</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="contact">
+      <form aria-label="Contact Form">
+        <label for="name">Name</label>
+        <input id="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="2"></textarea>
+
+        <button>Send Message</button>
+      </form>
+    </section>
+
+    <!-- footer -->
+    <footer>© 2025 HB Sphere. All rights reserved.</footer>
+  </body>
+</html>
