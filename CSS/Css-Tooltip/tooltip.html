@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tooltip {
+        position: relative;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      .tooltip-text {
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translateY(50%);
+        background: #111;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+
+      .tooltip:hover .tooltip-text {
+        opacity: 1;
+      }
+
+      .thumb {
+        width: 200px;
+        cursor: pointer;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+
+      .lightbox:target {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .close {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 30px;
+        color: white;
+        text-decoration: none;
+      }
+      .shape-img {
+        float: left;
+        width: 200px;
+        height: 200px;
+        shape-outside: circle(100%);
+        clip-path: circle(50%);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="tooltip">
+      Hover me
+      <span class="tooltip-text">This is a tooltip</span>
+    </button>
+    <br />
+    <hr />
+    <a href="#img1">
+      <img src="../../assets/images/profile-pic.jpg" class="thumb" />
+    </a>
+
+    <div id="img1" class="lightbox">
+      <a href="#" class="close">×</a>
+      <img src="../../assets/images/profile-pic.jpg" />
+    </div>
+    <br />
+    <hr />
+    <br />
+    <img src="../../assets/images/profile-pic.jpg" class="shape-img" />
+    <p>Text flows around the circular image...</p>
+  </body>
+</html>

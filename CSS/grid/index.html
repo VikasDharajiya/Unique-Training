@@ -22,6 +22,7 @@
         gap: 20px;
       }
       .card {
+        position: relative;
         background: white;
         padding: 15px;
         border-radius: 10px;
@@ -49,6 +50,28 @@
         transform: translateY(-5px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       }
+      /* tooltip */
+      .tooltip {
+        position: absolute;
+        top: 10px;
+        left: 20%;
+        transform: translateX(-50%) translateY(-20px);
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 14px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: 0.3s;
+        pointer-events: none;
+      }
+
+      /* Tooltip show */
+      .card:hover .tooltip {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
       @media (max-width: 900px) {
         .grid {
           grid-template-columns: repeat(2, 1fr);
@@ -68,54 +91,63 @@
         <img src="img/camera.avif" alt="" />
         <h3>Nikon D750</h3>
         <p>RS:20000</p>
+        <span class="tooltip">Camera</span>
       </div>
 
       <div class="card">
         <img src="img/car.avif" alt="" />
         <h3>Toy Car</h3>
         <p>RS:2500</p>
+        <span class="tooltip">Car</span>
       </div>
 
       <div class="card">
         <img src="img/cycle.avif" alt="" />
         <h3>Bicycle</h3>
         <p>RS:9000</p>
+        <span class="tooltip">Cycle</span>
       </div>
 
       <div class="card">
         <img src="img/gogeels.avif" alt="" />
         <h3>Black</h3>
         <p>RS:2200</p>
+        <span class="tooltip">gogeel</span>
       </div>
 
       <div class="card">
         <img src="img/headphone.avif" alt="" />
         <h3>Headphone</h3>
         <p>RS:8700</p>
+        <span class="tooltip">Headphones</span>
       </div>
 
       <div class="card">
         <img src="img/watch.avif" alt="" />
         <h3>Watch</h3>
         <p>RS:3200</p>
+        <span class="tooltip">Watch</span>
       </div>
 
       <div class="card">
         <img src="img/keyboard.avif" alt="" />
         <h3>Keyboard</h3>
         <p>RS:7800</p>
+        <span class="tooltip">Keyboard</span>
       </div>
 
       <div class="card">
         <img src="img/mobile.avif" alt="" />
         <h3>I phone x</h3>
         <p>RS:28000</p>
+        <span class="tooltip">Mobile</span>
       </div>
 
       <div class="card">
         <img src="img/shoes.avif" alt="" />
         <h3>Nike shoe</h3>
         <p>RS:9500</p>
+        <span class="tooltip">Shoe</span>
       </div>
     </div>
   </body>
