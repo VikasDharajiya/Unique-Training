@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Web</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">HBD</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero-carousel">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div
+              class="hero-slide d-flex align-items-center text-center text-white"
+            >
+              <div class="container">
+                <h1 class="display-5 fw-bold">Build Modern Websites</h1>
+                <p class="lead mt-3">
+                  Responsive, clean and professional layouts
+                </p>
+                <a href="#contact" class="btn btn-primary btn-lg mt-3">
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div
+              class="hero-slide d-flex align-items-center text-center text-white"
+            >
+              <div class="container">
+                <h1 class="display-5 fw-bold">Bootstrap Powered</h1>
+                <p class="lead mt-3">Faster development with less custom CSS</p>
+                <a href="#services" class="btn btn-outline-light btn-lg mt-3">
+                  Our Services
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="section-padding bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Our Services</h2>
+          <p class="text-muted col-lg-6 mx-auto">
+            We provide high-quality solutions to help your business grow
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="service-icon mb-3">💻</div>
+                <h5 class="fw-bold">Web Development</h5>
+                <p class="text-muted">
+                  Responsive, fast and scalable web applications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="service-icon mb-3">🎨</div>
+                <h5 class="fw-bold">UI / UX Design</h5>
+                <p class="text-muted">
+                  Clean interfaces focused on user experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="service-icon mb-3">🚀</div>
+                <h5 class="fw-bold">SEO Optimization</h5>
+                <p class="text-muted">
+                  Improve visibility and grow organic traffic.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section id="testimonials" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">What Clients Say</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div
+              id="testimonialCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                  <p class="lead">
+                    “Amazing service and clean professional design.”
+                  </p>
+                  <h6 class="fw-bold mt-3">— John Doe</h6>
+                </div>
+
+                <div class="carousel-item">
+                  <p class="lead">“Very responsive and easy to work with.”</p>
+                  <h6 class="fw-bold mt-3">— Sarah Smith</h6>
+                </div>
+
+                <div class="carousel-item">
+                  <p class="lead">“Highly recommended for modern websites.”</p>
+                  <h6 class="fw-bold mt-3">— Alex Roy</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold">Contact Us</h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-dark text-center">
+      <div class="container">
+        <p class="mb-0">© 2025 HBD. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
