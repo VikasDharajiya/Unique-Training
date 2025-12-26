@@ -57,9 +57,31 @@
     </nav>
 
     <!-- HERO -->
-    <section class="py-20 bg-indigo-600 text-white text-center">
-      <h2 class="text-4xl font-bold mb-4">Welcome to HBD</h2>
-      <p>We build responsive websites using Tailwind CSS</p>
+    <section
+      class="py-20 md:py-32 bg-indigo-600 text-white text-center relative overflow-hidden"
+    >
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Welcome to HBD</h2>
+        <p class="text-lg md:text-xl mb-8">
+          We build responsive websites using Tailwind CSS
+        </p>
+
+        <!-- Call to Action Button -->
+        <a
+          href="contact.html"
+          class="inline-block bg-white text-indigo-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-xl hover:bg-gray-200 transition-all duration-300"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Optional background shapes for style -->
+      <div
+        class="absolute top-0 left-0 w-40 h-40 bg-cyan-200 opacity-30 rounded-full -translate-x-1/2 -translate-y-1/2"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-60 h-60 bg-indigo-900 opacity-30 rounded-full translate-x-1/4 translate-y-1/4"
+      ></div>
     </section>
 
     <!-- SERVICES -->
@@ -69,19 +91,36 @@
 
         <div class="grid gap-6 md:grid-cols-3">
           <div
-            class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:bg-indigo-500 hover:text-gray-200 transition-all duration-300 transform hover:scale-105"
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:bg-indigo-600 transition-all duration-300 transform hover:scale-105 text-center"
           >
-            Web Design
+            <h3 class="text-xl font-semibold mb-2 group-hover:text-white">
+              Web Design
+            </h3>
+            <p class="text-gray-600 group-hover:text-gray-200">
+              Beautiful, responsive layouts for your website.
+            </p>
           </div>
+
           <div
-            class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:bg-indigo-500 hover:text-gray-200 transition-all duration-300 transform hover:scale-105"
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:bg-indigo-600 transition-all duration-300 transform hover:scale-105 text-center"
           >
-            Development
+            <h3 class="text-xl font-semibold mb-2 group-hover:text-white">
+              Development
+            </h3>
+            <p class="text-gray-600 group-hover:text-gray-200">
+              Clean, efficient, and scalable code solutions.
+            </p>
           </div>
+
           <div
-            class="bg-white p-6 rounded-xl shadow hover:shadow-lg hover:bg-indigo-500 hover:text-gray-200 transition-all duration-300 transform hover:scale-105"
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:bg-indigo-600 transition-all duration-300 transform hover:scale-105 text-center"
           >
-            SEO
+            <h3 class="text-xl font-semibold mb-2 group-hover:text-white">
+              SEO
+            </h3>
+            <p class="text-gray-600 group-hover:text-gray-200">
+              Improve your search ranking and visibility online.
+            </p>
           </div>
         </div>
       </div>
@@ -92,23 +131,175 @@
       <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-10">Testimonials</h2>
 
-        <div class="flex flex-col md:flex-row gap-6">
-          <div class="bg-white p-6 rounded-xl shadow flex-1">
-            <p>"Amazing work!"</p>
-            <h4 class="font-bold mt-2">– Alex</h4>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <p class="text-gray-700 group-hover:text-gray-900 mb-4">
+              "HBD helped us build our website quickly and efficiently!"
+            </p>
+            <h4 class="font-semibold group-hover:text-indigo-600">John Doe</h4>
+            <span class="text-sm text-gray-500 group-hover:text-gray-700"
+              >CEO, Company</span
+            >
           </div>
 
-          <div class="bg-white p-6 rounded-xl shadow flex-1">
-            <p>"Very professional."</p>
-            <h4 class="font-bold mt-2">– Sam</h4>
+          <!-- Testimonial 2 -->
+          <div
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <p class="text-gray-700 group-hover:text-gray-900 mb-4">
+              "Their design team is amazing — very professional!"
+            </p>
+            <h4 class="font-semibold group-hover:text-indigo-600">
+              Jane Smith
+            </h4>
+            <span class="text-sm text-gray-500 group-hover:text-gray-700"
+              >Marketing Head</span
+            >
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            <p class="text-gray-700 group-hover:text-gray-900 mb-4">
+              "Responsive, fast, and visually stunning work!"
+            </p>
+            <h4 class="font-semibold group-hover:text-indigo-600">Alex Lee</h4>
+            <span class="text-sm text-gray-500 group-hover:text-gray-700"
+              >Designer</span
+            >
           </div>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-300 py-6 text-center">
-      © 2025 HBD
+    <footer class="bg-gray-800 text-gray-300 py-12">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">HBD</h3>
+          <p class="text-gray-400">
+            We create responsive websites and modern UI designs using Tailwind
+            CSS.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-indigo-500 transition-colors duration-300"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="hover:text-indigo-500 transition-colors duration-300"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="hover:text-indigo-500 transition-colors duration-300"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="hover:text-indigo-500 transition-colors duration-300"
+                >Services</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contact</h4>
+          <p>
+            Email:
+            <a
+              href="mailto:vikasdharajiya18@gmail.com"
+              class="hover:text-indigo-500 transition-colors duration-300"
+              >info@hbd.com</a
+            >
+          </p>
+          <p>
+            Phone:
+            <a
+              href="tel:9737230557"
+              class="hover:text-indigo-500 transition-colors duration-300"
+              >9737230557</a
+            >
+          </p>
+
+          <div class="flex gap-4 mt-4">
+            <a
+              href="https://www.linkedin.com/in/vikas-dharajiya"
+              class="transition-transform duration-300 hover:scale-110"
+              aria-label="Linkedln"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                color="#ffffff"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M4.5 9.5H4C3.05719 9.5 2.58579 9.5 2.29289 9.79289C2 10.0858 2 10.5572 2 11.5V20C2 20.9428 2 21.4142 2.29289 21.7071C2.58579 22 3.05719 22 4 22H4.5C5.44281 22 5.91421 22 6.20711 21.7071C6.5 21.4142 6.5 20.9428 6.5 20V11.5C6.5 10.5572 6.5 10.0858 6.20711 9.79289C5.91421 9.5 5.44281 9.5 4.5 9.5Z"
+                />
+                <path
+                  d="M6.5 4.25C6.5 5.49264 5.49264 6.5 4.25 6.5C3.00736 6.5 2 5.49264 2 4.25C2 3.00736 3.00736 2 4.25 2C5.49264 2 6.5 3.00736 6.5 4.25Z"
+                />
+                <path
+                  d="M12.326 9.5H11.5C10.5572 9.5 10.0858 9.5 9.79289 9.79289C9.5 10.0858 9.5 10.5572 9.5 11.5V20C9.5 20.9428 9.5 21.4142 9.79289 21.7071C10.0858 22 10.5572 22 11.5 22H12C12.9428 22 13.4142 22 13.7071 21.7071C14 21.4142 14 20.9428 14 20L14.0001 16.5001C14.0001 14.8433 14.5281 13.5001 16.0879 13.5001C16.8677 13.5001 17.5 14.1717 17.5 15.0001V19.5001C17.5 20.4429 17.5 20.9143 17.7929 21.2072C18.0857 21.5001 18.5572 21.5001 19.5 21.5001H19.9987C20.9413 21.5001 21.4126 21.5001 21.7055 21.2073C21.9984 20.9145 21.9985 20.4432 21.9987 19.5006L22.0001 14.0002C22.0001 11.515 19.6364 9.50024 17.2968 9.50024C15.9649 9.50024 14.7767 10.1531 14.0001 11.174C14 10.5439 14 10.2289 13.8632 9.995C13.7765 9.84686 13.6531 9.72353 13.505 9.63687C13.2711 9.5 12.9561 9.5 12.326 9.5Z"
+                />
+              </svg>
+            </a>
+
+            <!-- GitHub -->
+            <a
+              href="https://github.com/VikasDharajiya"
+              class="transition-transform duration-300 hover:scale-110"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                color="#ffffff"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17" />
+                <path
+                  d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="mt-8 text-center text-gray-500 text-sm">
+        &copy; 2025 HBD. All rights reserved.
+      </div>
     </footer>
 
     <!-- JS -->
