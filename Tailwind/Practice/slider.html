@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind Background Slider</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-500">
+    <!-- ================= SLIDER SECTION ================= -->
+    <section class="relative min-h-screen overflow-hidden">
+      <!-- ===== SLIDES (BACKGROUND IMAGES) ===== -->
+      <!-- Each slide is absolute and covers full section -->
+      <div class="absolute inset-0">
+        <div
+          class="slide absolute inset-0 bg-[url('img/bg1.avif')] bg-cover bg-center opacity-100 transition-opacity duration-1000"
+        ></div>
+
+        <div
+          class="slide absolute inset-0 bg-[url('img/bg2.avif')] bg-cover bg-center opacity-0 transition-opacity duration-1000"
+        ></div>
+
+        <div
+          class="slide absolute inset-0 bg-[url('img/bg3.avif')] bg-cover bg-center opacity-0 transition-opacity duration-1000"
+        ></div>
+      </div>
+
+      <!-- ===== OVERLAY (for text readability) ===== -->
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <!-- ===== CONTENT ===== -->
+      <div
+        class="relative z-10 min-h-screen flex items-center max-w-7xl mx-auto px-6"
+      >
+        <div class="max-w-2xl text-white space-y-6">
+          <h1 class="text-5xl font-bold">Tailwind Slider</h1>
+          <p class="text-xl text-gray-200">
+            Background image slider using Tailwind CSS and Vanilla JavaScript.
+          </p>
+
+          <div class="flex gap-4">
+            <button class="px-6 py-3 bg-white text-black rounded-lg">
+              Get Started
+            </button>
+            <button class="px-6 py-3 border border-white rounded-lg">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CONTROLS ===== -->
+      <button
+        id="prev"
+        class="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 text-white p-3 rounded-full hover:bg-white/40"
+      >
+        ‹
+      </button>
+
+      <button
+        id="next"
+        class="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 text-white p-3 rounded-full hover:bg-white/40"
+      >
+        ›
+      </button>
+    </section>
+    <!-- ================= END SLIDER ================= -->
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+      // Get all slides
+      const slides = document.querySelectorAll(".slide");
+
+      // Get buttons
+      const nextBtn = document.getElementById("next");
+      const prevBtn = document.getElementById("prev");
+
+      // Track current slide index
+      let current = 0;
+
+      // Auto slide interval (5 seconds)
+      let interval = setInterval(nextSlide, 5000);
+
+      // Show slide based on index
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          // Show active slide
+          slide.classList.toggle("opacity-100", i === index);
+          // Hide others
+          slide.classList.toggle("opacity-0", i !== index);
+        });
+      }
+
+      // Move to next slide
+      function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }
+
+      // Move to previous slide
+      function prevSlide() {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      }
+
+      // Restart autoplay after manual click
+      function restartInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 5000);
+      }
+
+      // Next button click
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        restartInterval();
+      });
+
+      // Prev button click
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        restartInterval();
+      });
+    </script>
+    <!-- ================= END JS ================= -->
+  </body>
+</html>

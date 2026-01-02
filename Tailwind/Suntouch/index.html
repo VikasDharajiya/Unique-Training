@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suntouch Laminates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              encode: ['"Encode Sans"', "sans-serif"],
+            },
+          },
+        },
+        plugins: [
+          function ({ addUtilities }) {
+            addUtilities({
+              ".nav-link": {
+                position: "relative",
+              },
+              ".nav-link::after": {
+                content: "''",
+                position: "absolute",
+                top: "0.6rem",
+                bottom: "0.6rem",
+                left: "40%",
+                right: "40%",
+                backgroundColor: "#000",
+                borderRadius: "9999px",
+                opacity: "0",
+                transition: "all 0.2s cubic-bezier(0.4,0,0.2,1)",
+                zIndex: "-1",
+              },
+              ".nav-link:hover::after": {
+                left: "0",
+                right: "0",
+                opacity: "0.09",
+              },
+            });
+          },
+        ],
+      };
+    </script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-gray-50 border-b">
+      <div class="flex items-center justify-between h-20 lg:h-24 px-2 lg:px-6">
+        <!-- Left: Hamburger + Logo -->
+        <div class="flex items-center gap-3">
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden"
+            aria-label="Open menu"
+          >
+            <img src="img/menu.svg" class="h-6" alt="menu" />
+          </button>
+
+          <a href="#">
+            <img src="img/logo2.png" class="h-12" alt="Suntouch Laminates" />
+          </a>
+        </div>
+
+        <!-- Center: Desktop Menu -->
+        <nav class="hidden lg:block absolute inset-x-0">
+          <ul
+            class="flex justify-center font-encode font-semibold text-gray-900 relative"
+          >
+            <li><a href="#" class="nav-link px-6 py-6">Home</a></li>
+            <li><a href="#" class="nav-link px-6 py-6">About Us</a></li>
+            <li class="group">
+              <a href="#" class="nav-link px-6 py-6 items-center gap-1">
+                Brands
+              </a>
+
+              <div
+                class="absolute left-0 top-full w-full pt-6 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-300 ease-out z-50"
+              >
+                <div class="bg-white shadow-xl px-5 py-10">
+                  <div class="grid grid-cols-7 gap-6">
+                    <!-- Card -->
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/suntouch.png" class="h-14" />
+                    </div>
+
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/nerolam.png" class="h-12" />
+                    </div>
+
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/arctonic.png" class="h-12 w-44" />
+                    </div>
+
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/sonova.png" class="h-12" />
+                    </div>
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/steeloak.png" class="h-12" />
+                    </div>
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/pixel-mica.png" class="h-12 w-32" />
+                    </div>
+                    <div
+                      class="group/card px-2 py-8 rounded-xl border object-cover object-center hover:-translate-y-1 hover:shadow-md transition"
+                    >
+                      <img src="img/brand/Elegora.png" class="h-12" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li><a href="#" class="nav-link px-6 py-6">Blog</a></li>
+            <li><a href="#" class="nav-link px-6 py-6">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: Icons -->
+        <div class="flex items-center gap-3">
+          <!-- Catalog -->
+          <a
+            href="#"
+            class="inline-flex justify-center items-center h-11 w-11 border-2 border-gray-500 rounded-full hover:bg-gray-100 transition"
+          >
+            <img src="img/catelog.svg" class="h-6" alt="Catalog" />
+          </a>
+
+          <!-- Call button desktop -->
+          <a
+            href="tel:+919825896998"
+            class="hidden sm:flex items-center gap-2 border-2 border-red-500 text-red-600 px-3 py-2 rounded-full hover:bg-red-50 transition"
+          >
+            <img src="img/call-primary.svg" class="h-6" alt="Call" />
+            <span class="font-semibold">+91 98258 96998</span>
+          </a>
+
+          <!-- Call button mobile -->
+          <a
+            href="tel:+919825896998"
+            class="sm:hidden inline-flex justify-center items-center h-11 w-11 border-2 border-red-500 rounded-full hover:bg-red-50 transition"
+          >
+            <img src="img/call-primary.svg" class="h-6" alt="Call" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="lg:hidden bg-white border-b">
+        <ul class="flex flex-col font-encode font-semibold text-gray-900">
+          <li>
+            <a href="#" class="px-3 hover:bg-gray-300 rounded-full transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="px-3 hover:bg-gray-300 rounded-full transition"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="#" class="px-3 hover:bg-gray-300 rounded-full transition"
+              >Brands</a
+            >
+          </li>
+          <li>
+            <a href="#" class="px-3 hover:bg-gray-300 rounded-full transition"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a href="#" class="px-3 hover:bg-gray-300 rounded-full transition"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="relative w-full max-w-7xl mx-auto">
+      <div class="relative h-[90vh] overflow-hidden">
+        <!-- IMAGE WRAPPER -->
+        <div class="relative w-full h-full flex items-center justify-center">
+          <!-- SHAPED IMAGE -->
+          <img
+            src="img/hero-bg.png"
+            alt=""
+            class="relative z-0 max-h-full max-w-full object-contain"
+          />
+
+          <!-- GRADIENT (same size as image) -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"
+          ></div>
+        </div>
+
+        <!-- TEXT -->
+        <div class="absolute bottom-8 left-8 text-white z-10 max-w-xl">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold">
+            Premium Laminates
+          </h1>
+          <p class="mt-2 text-sm sm:text-base opacity-90">
+            Style • Strength • Durability
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOR BAR SECTION -->
+    <section class="bg-gray-100 py-24">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl sm:text-5xl font-semibold mb-6">Color Bar</h2>
+
+        <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-4">
+          Discover an array of exquisite tones and varied surface concepts
+          offered by Suntouch, and uncover the compelling reasons behind
+          choosing our surfaces.
+        </p>
+
+        <p class="text-gray-700 mb-14">
+          Select any hue
+          <span class="text-gray-500 font-normal">
+            to explore the available designs.
+          </span>
+        </p>
+
+        <!-- COLOR GRID -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 place-items-center"
+        >
+          <!-- TILE 1 -->
+          <div class="color-tile bg-[#E53935] w-28 sm:w-32" title="Red"></div>
+
+          <!-- TILE 2 (FLIP) -->
+          <div
+            class="color-tile flip bg-[#FB8C00] w-28 sm:w-32"
+            title="Orange"
+          ></div>
+
+          <!-- TILE 3 -->
+          <div
+            class="color-tile bg-[#FDD835] w-28 sm:w-32"
+            title="Yellow"
+          ></div>
+
+          <!-- TILE 4 (FLIP) -->
+          <div
+            class="color-tile flip bg-[#43A047] w-28 sm:w-32"
+            title="Green"
+          ></div>
+
+          <!-- TILE 5 -->
+          <div class="color-tile bg-[#1E88E5] w-28 sm:w-32" title="Blue"></div>
+
+          <!-- TILE 6 (FLIP) -->
+          <div
+            class="color-tile flip bg-[#8E24AA] w-28 sm:w-32"
+            title="Purple"
+          ></div>
+
+          <!-- TILE 7 -->
+          <div class="color-tile bg-[#6D4C41] w-28 sm:w-32" title="Brown"></div>
+
+          <!-- TILE 8 (FLIP) -->
+          <div
+            class="color-tile flip bg-[#B0BEC5] w-28 sm:w-32"
+            title="Grey"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative bg-[#000000] text-[#ebebeb] overflow-hidden min-h-[110vh]"
+    >
+      <!-- LEFT BACKGROUND IMAGE (LG+) -->
+      <div
+        class="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none"
+      >
+        <img
+          src="img/Frame 97.png"
+          alt=""
+          class="h-full w-full object-contain opacity-90"
+        />
+      </div>
+
+      <!-- MOBILE / TABLET IMAGE (≤ MD, TAKES SPACE) -->
+      <div class="lg:hidden w-full px-4 pt-10 flex justify-center">
+        <img src="img/Frame 97.png" alt="" class="w-full max-w-md" />
+      </div>
+
+      <!-- CONTENT CONTAINER -->
+      <div class="relative max-w-7xl mx-auto px-4">
+        <div
+          class="max-w-[520px] mx-auto lg:ml-auto lg:mr-0 pt-24 sm:pt-28 md:pt-32 lg:pt-24 h-[784px] overflow-y-auto overflow-x-hidden relative text-center lg:text-left"
+        >
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-8">
+            laminate manufacturing companies in india
+          </h2>
+
+          <!-- CARDS GRID -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-gray-800/60 p-4 rounded-xl">
+              Gujarat
+              <div class="text-sm text-gray-400">7 Stores</div>
+            </div>
+
+            <div class="bg-gray-800/60 p-4 rounded-xl">
+              Maharashtra
+              <div class="text-sm text-gray-400">6 Stores</div>
+            </div>
+
+            <div class="bg-gray-800/60 p-4 rounded-xl">
+              Rajasthan
+              <div class="text-sm text-gray-400">4 Stores</div>
+            </div>
+
+            <div class="bg-gray-800/60 p-4 rounded-xl">
+              Karnataka
+              <div class="text-sm text-gray-400">2 Stores</div>
+            </div>
+          </div>
+
+          <!-- SCROLL COVER GRADIENT -->
+          <div
+            class="pointer-events-none absolute bottom-0 left-0 h-24 w-full bg-gradient-to-b from-transparent to-[#000000]"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white w-full">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      >
+        <div>
+          <img src="img/logo2.png" alt="" />
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Products</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>Laminates</li>
+            <li>Sheets</li>
+            <li>Boards</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Support</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>FAQ</li>
+            <li>Privacy Policy</li>
+            <li>Terms</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+
+    <script>
+      //hamburger
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      //slider
+    </script>
+  </body>
+</html>

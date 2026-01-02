@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suntouch Responsive Color Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .tri {
+        display: block;
+        width: 110px;
+        height: 96px;
+        clip-path: path(
+          "M52.2646 92.971C53.0329 94.312 54.9671 94.312 55.7354 92.971L107.285 2.99422C108.048 1.6609 107.086 0 105.549 0H2.45082C0.914176 0 -0.0484418 1.6609 0.715441 2.99422L52.2646 92.971Z"
+        );
+        margin-left: -50px;
+        transition: transform 0.25s ease, z-index 0.25s ease;
+        --flip: scaleY(1); /* default */
+      }
+
+      /* first in row has no margin */
+      .row .tri:first-child {
+        margin-left: 0;
+      }
+
+      /* flip layout using CSS variable */
+      .tri:nth-child(2n) {
+        --flip: scaleY(-1);
+      }
+
+      .row.second .tri:first-child {
+        --flip: scaleY(-1);
+      }
+      .row.second .tri:nth-child(2n + 1) {
+        --flip: scaleY(-1);
+      }
+      .row.second .tri:nth-child(2n) {
+        --flip: scaleY(1);
+      }
+
+      /* apply flip from variable */
+      .tri {
+        transform: var(--flip);
+      }
+
+      /* hover scale WITHOUT changing flip */
+      .tri:hover {
+        transform: var(--flip) scale(1.12);
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <section class="py-24">
+      <h2 class="text-center text-4xl sm:text-5xl font-semibold mb-16">
+        Color Bar
+      </h2>
+
+      <!-- ROW 1 -->
+      <div class="row flex flex-wrap justify-center mb-1">
+        <span class="tri bg-[#E53935]"></span>
+        <span class="tri bg-[#FB8C00]"></span>
+        <span class="tri bg-[#FDD835]"></span>
+        <span class="tri bg-[#43A047]"></span>
+        <span class="tri bg-[#1E88E5]"></span>
+        <span class="tri bg-[#8E24AA]"></span>
+        <span class="tri bg-[#6D4C41]"></span>
+        <span class="tri bg-[#B0BEC5]"></span>
+        <span class="tri bg-[#D81B60]"></span>
+        <span class="tri bg-[#00897B]"></span>
+        <span class="tri bg-[#F4511E]"></span>
+        <span class="tri bg-[#3949AB]"></span>
+        <span class="tri bg-[#7CB342]"></span>
+        <span class="tri bg-[#5E35B1]"></span>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="row second flex flex-wrap justify-center">
+        <span class="tri bg-[#5D4037]"></span>
+        <span class="tri bg-[#90A4AE]"></span>
+        <span class="tri bg-[#C2185B]"></span>
+        <span class="tri bg-[#00796B]"></span>
+        <span class="tri bg-[#EF6C00]"></span>
+        <span class="tri bg-[#303F9F]"></span>
+        <span class="tri bg-[#689F38]"></span>
+        <span class="tri bg-[#455A64]"></span>
+        <span class="tri bg-[#AD1457]"></span>
+        <span class="tri bg-[#00695C]"></span>
+        <span class="tri bg-[#E64A19]"></span>
+        <span class="tri bg-[#283593]"></span>
+        <span class="tri bg-[#558B2F]"></span>
+        <span class="tri bg-[#37474F]"></span>
+      </div>
+    </section>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suntouch Laminates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      /* TRIANGLE STYLES */
+      .tri {
+        display: block;
+        width: 110px;
+        height: 96px;
+        clip-path: path(
+          "M52.2646 92.971C53.0329 94.312 54.9671 94.312 55.7354 92.971L107.285 2.99422C108.048 1.6609 107.086 0 105.549 0H2.45082C0.914176 0 -0.0484418 1.6609 0.715441 2.99422L52.2646 92.971Z"
+        );
+        margin-left: -50px; /* overlap */
+        transition: transform 0.25s ease, z-index 0.25s ease;
+        --flip: scaleY(1);
+      }
+
+      .row .tri:first-child {
+        margin-left: 0;
+      }
+
+      /* flip layout using CSS variable */
+      .tri:nth-child(2n) {
+        --flip: scaleY(-1);
+      }
+
+      .row.second .tri:first-child {
+        --flip: scaleY(-1);
+      }
+      .row.second .tri:nth-child(2n + 1) {
+        --flip: scaleY(-1);
+      }
+      .row.second .tri:nth-child(2n) {
+        --flip: scaleY(1);
+      }
+
+      /* apply flip from variable */
+      .tri {
+        transform: var(--flip);
+      }
+
+      /* hover scale only */
+      .tri:hover {
+        transform: var(--flip) scale(1.12);
+        z-index: 10;
+      }
+
+      /* hide scrollbar but keep scroll */
+      .no-scrollbar {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <header class="sticky top-0 z-50 bg-white border-b">
+      <div
+        class="flex justify-between h-20 lg:h-24 px-3 md:px-5 lg:px-10 xl:px-20"
+      >
+        <div class="flex items-center gap-3">
+          <button
+            id="mobile-menu-button"
+            class="lg:hidden"
+            aria-label="Open menu"
+          >
+            <img src="img/menu.svg" class="h-6" alt="menu" />
+          </button>
+
+          <a href="#">
+            <img src="img/logo2.png" class="h-12" alt="Suntouch Laminates" />
+          </a>
+        </div>
+
+        <ul
+          class="hidden gap-2 lg:flex font-semibold font-['Encode_Sans'] tracking-wide items-center"
+        >
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+              >About Us</a
+            >
+          </li>
+          <li class="group">
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm"
+              >Brand</a
+            >
+            <div
+              class="fixed left-0 top-[90px] w-full bg-white shadow-[0_-6px_20px_-8px_rgba(0,0,0,0.15)] invisible pointer-events-none opacity-0 -translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] z-50"
+            >
+              <div
+                class="absolute pointer-events-auto -top-6 left-0 h-6 w-full"
+              ></div>
+              <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-7 gap-8">
+                <!-- cards -->
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/suntouch.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/nerolam.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/arctonic.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/sonova.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/steeloak.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/pixel-mica.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center px-2 py-8 rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md"
+                >
+                  <img
+                    src="img/brand/Elegora.png"
+                    class="max-h-full max-w-[140px] object-contain"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-2 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 xl:pr-3">
+          <!-- Catalog -->
+          <a
+            href="#"
+            class="inline-flex justify-center items-center h-11 w-11 border-2 border-gray-500 rounded-full hover:bg-gray-100 transition"
+          >
+            <img src="img/catelog.svg" class="h-6" alt="Catalog" />
+          </a>
+
+          <!-- Call button desktop -->
+          <a
+            href="tel:+919825896998"
+            class="hidden sm:flex items-center gap-2 border-2 border-red-500 text-red-600 px-3 py-2 rounded-full hover:bg-red-50 transition"
+          >
+            <img src="img/call-primary.svg" class="h-6" alt="Call" />
+            <span class="font-semibold">+91 98258 96998</span>
+          </a>
+
+          <!-- Call button mobile -->
+          <a
+            href="tel:+919825896998"
+            class="sm:hidden inline-flex justify-center items-center h-11 w-11 border-2 border-red-500 rounded-full hover:bg-red-50 transition"
+          >
+            <img src="img/call-primary.svg" class="h-6" alt="Call" />
+          </a>
+        </div>
+      </div>
+
+      <!-- mobile-menu -->
+
+      <ul
+        id="mobile-menu"
+        class="hidden flex flex-col gap-4 mt-2 mb-4 lg:hidden bg-white font-['Encode_Sans'] font-semibold text-gray-900 px-3"
+      >
+        <li>
+          <a
+            href="#"
+            class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+            >About Us</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+            >Brands</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+            >Blog</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="px-4 py-2 rounded-full transition-all duration-300 ease-out hover:bg-gray-200 hover:shadow-sm hover:-translate-y-[1px]"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- hero  (clip-path using chatgpt)-->
+    <section
+      class="flex items-start justify-center bg-white px-3 sm:px-4 lg:px-6 py-6 lg:py-5 min-h-[60vh]"
+    >
+      <div
+        class="relative mx-auto w-[92%] sm:w-[85%] md:w-[90%] lg:w-full max-w-7xl"
+      >
+        <div class="relative block lg:hidden">
+          <img
+            id="heroImageMobile"
+            class="w-full aspect-[4/5] object-cover rounded-3xl transition-opacity duration-700 [filter:drop-shadow(3px_20px_15px_rgba(41,41,41,0.4))]"
+            alt="Hero"
+          />
+
+          <!-- SAME GRADIENT AS SVG -->
+          <div
+            class="absolute inset-0 rounded-3xl bg-gradient-to-b from-black/0 via-black/0 to-black/75 pointer-events-none"
+          ></div>
+          <div
+            id="heroTextMobile"
+            class="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 z-10 text-white [text-shadow:0_4px_14px_rgba(0,0,0,0.6)]"
+          >
+            <h1
+              id="heroTitleMobile"
+              class="text-2xl sm:text-3xl font-semibold"
+            ></h1>
+            <p
+              id="heroSubtitleMobile"
+              class="mt-1 text-sm sm:text-base opacity-90"
+            ></p>
+          </div>
+        </div>
+
+        <div class="[filter:drop-shadow(3px_20px_15px_rgba(41,41,41,0.4))]">
+          <svg
+            class="w-full h-auto hidden lg:block rounded-3xl"
+            viewBox="0 0 1360 640"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <defs>
+              <clipPath id="heroClip" class="hidden xl:block">
+                <path
+                  d="M0 32C0 14.3269 14.3269 0 32 0H1328C1345.67 0 1360 14.3269 1360 32V475.5C1360 488.755 1349.25 499.5 1336 499.5H1335C1308.49 499.5 1287 520.99 1287 547.5V616C1287 629.255 1276.25 640 1263 640H32C14.3269 640 0 625.673 0 608V32Z"
+                />
+              </clipPath>
+
+              <linearGradient id="heroGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="50%" stop-color="rgba(0,0,0,0)" />
+                <stop offset="100%" stop-color="rgba(0,0,0,0.74)" />
+              </linearGradient>
+            </defs>
+
+            <!-- IMAGE -->
+            <image
+              id="heroImage"
+              class="w-full h-full transition-opacity duration-800"
+              clip-path="url(#heroClip)"
+              preserveAspectRatio="xMidYMid slice"
+            />
+
+            <!-- GRADIENT -->
+            <rect
+              width="1360"
+              height="640"
+              fill="url(#heroGradient)"
+              clip-path="url(#heroClip)"
+              class="transition-opacity duration-800"
+            />
+          </svg>
+          <div
+            id="heroTextDesktop"
+            class="hidden lg:block absolute bottom-8 left-8 xl:bottom-10 xl:left-10 z-10 text-white [text-shadow:0_4px_14px_rgba(0,0,0,0.6)]"
+          >
+            <h1
+              id="heroTitleDesktop"
+              class="text-4xl xl:text-5xl font-semibold"
+            ></h1>
+            <p id="heroSubtitleDesktop" class="mt-2 text-lg opacity-90"></p>
+          </div>
+        </div>
+
+        <!-- SLIDER CONTROLS -->
+        <div
+          class="absolute -bottom-14 translate-y-9 sm:-bottom-16 left-1/2 -translate-x-1/2 flex flex-row-reverse gap-2 xl:left-auto xl:translate-x-5 xl:-translate-y-16 xl:right-6 xl:flex-col transition-all duration-300 ease-out"
+        >
+          <button id="nextBtn" class="">
+            <img src="img/Frame 15.png" alt="" />
+          </button>
+          <button id="prevBtn" class="">
+            <img src="img/Frame 18.png" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-20 mt-10 bg-white">
+      <!-- MAIN GRID -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 mx-5 lg:mx-0 gap-10 items-center"
+      >
+        <!-- LEFT CONTENT -->
+        <div class="max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+          <h2
+            class="text-gray-950 text-3xl sm:text-4xl lg:text-5xl font-['Encode_Sans'] font-semibold mb-6"
+          >
+            Key Features
+          </h2>
+          <p
+            class="max-w-md mx-auto lg:mx-0 text-gray-600 leading-relaxed font-['Encode_Sans'] text-base sm:text-lg lg:text-xl"
+          >
+            Elevate your surroundings with laminates that embody sophistication,
+            versatility, and quality. Welcome to a world where every detail
+            matters.
+          </p>
+
+          <button
+            class="inline-flex items-center gap-2 border px-8 py-3 rounded-full border-red-500 text-red-600 mt-10 font-semibold hover:bg-red-100 transition"
+          >
+            Explore Product
+            <img class="size-3" src="img/arrow_forward.png" alt="" />
+          </button>
+        </div>
+
+        <!-- RIGHT GRID -->
+        <div
+          class="grid grid-cols-1 rounded-3xl shadow-2xl bg-black text-white sm:grid-cols-2 py-4 px-5 lg:translate-y-6"
+        >
+          <div class="p-6 rounded-lg">
+            <img class="mb-4" src="img/1.png" alt="" />
+            <h2 class="text-xl mb-2 font-semibold font-['Encode_Sans']">
+              Exclusive Designs
+            </h2>
+            <p
+              class="text-gray-400 font-['Encode_Sans'] leading-relaxed opacity-70"
+            >
+              A broad range of laminate constructions to meet your design,
+              application, cost, and fabrication requirements.
+            </p>
+          </div>
+          <div class="p-6 rounded-lg">
+            <img class="mb-4" src="img/2.png" alt="" />
+            <h2 class="text-xl mb-2 font-semibold font-['Encode_Sans']">
+              Wide range varieties
+            </h2>
+            <p
+              class="text-gray-400 font-['Encode_Sans'] leading-relaxed opacity-70"
+            >
+              We provide 400+ designs to choose according to your taste.
+            </p>
+          </div>
+          <div class="p-6 rounded-lg">
+            <img class="mb-4" src="img/3.png" alt="" />
+            <h2 class="text-xl mb-2 font-semibold font-['Encode_Sans']">
+              Premium features
+            </h2>
+            <p
+              class="text-gray-400 font-['Encode_Sans'] leading-relaxed opacity-70"
+            >
+              We provide 400+ designs to choose according to your taste.
+            </p>
+          </div>
+          <div class="p-6 rounded-lg">
+            <img class="mb-4" src="img/4.png" alt="" />
+            <h2 class="text-xl mb-2 font-semibold font-['Encode_Sans']">
+              Industry Expert
+            </h2>
+            <p
+              class="text-gray-400 font-['Encode_Sans'] leading-relaxed opacity-70"
+            >
+              SunTouch provides attractive, functional and affordable laminates
+              range for end users.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full py-20 mt-12 bg-gray-100">
+      <h2
+        class="text-3xl sm:text-4xl lg:text-5xl font-['Encode_Sans'] text-center text-gray-950 font-semibold mb-12"
+      >
+        Our Brands
+      </h2>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center"
+        >
+          <!-- CARD 1 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-1.png')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/suntouch.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-2.jpeg')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/nerolam.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-3.png')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/arctonic.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-4.png')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/sonova.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-5.jpg')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/steeloak.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-6.jpg')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/pixel-mica.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- CARD 7 -->
+          <div
+            class="bg-white shadow-md rounded-xl p-4 w-full max-w-[340px] flex flex-col items-center gap-5 transform transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+          >
+            <div class="w-full h-[240px] flex items-center justify-center">
+              <div
+                class="w-[200px] h-full bg-center bg-no-repeat bg-contain"
+                style="background-image: url('img/brand/card-7.jpg')"
+              ></div>
+            </div>
+            <div class="h-14 flex items-center justify-center">
+              <img
+                src="img/brand/Elegora.png"
+                class="max-h-full max-w-[140px] object-contain"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative w-full min-h-screen lg:mt-20">
+      <!-- Background -->
+      <div
+        class="absolute inset-0 bg-[url('img/bg-blend-section.png')] bg-cover bg-center bg-scroll lg:bg-fixed"
+      ></div>
+
+      <!-- Content -->
+      <div
+        class="relative max-w-6xl mx-auto z-10 bg-gray-100 text-center py-24 px-6"
+      >
+        <h2 class="text-4xl sm:text-5xl font-semibold mb-6">Color Bar</h2>
+
+        <p class="max-w-3xl mx-auto text-lg text-gray-600">
+          Discover an array of exquisite tones and varied surface concepts
+          offered by Suntouch, and uncover the compelling reasons behind
+          choosing our surfaces for your renovation and design endeavors.
+        </p>
+
+        <p class="mt-6 font-medium text-lg text-gray-700">
+          Select any hue
+          <span class="text-lg font-normal text-gray-600">
+            to explore the plethora of available designs.
+          </span>
+        </p>
+
+        <!-- COLOR BAR TRIANGLES -->
+        <div class="mt-14 hidden md:block">
+          <!-- ROW 1 -->
+          <div class="row flex flex-wrap justify-center mb-1">
+            <span class="tri bg-[#E53935]"></span>
+            <span class="tri bg-[#FB8C00]"></span>
+            <span class="tri bg-[#FDD835]"></span>
+            <span class="tri bg-[#43A047]"></span>
+            <span class="tri bg-[#1E88E5]"></span>
+            <span class="tri bg-[#8E24AA]"></span>
+            <span class="tri bg-[#6D4C41]"></span>
+            <span class="tri bg-[#B0BEC5]"></span>
+            <span class="tri bg-[#D81B60]"></span>
+            <span class="tri bg-[#00897B]"></span>
+            <span class="tri bg-[#F4511E]"></span>
+            <span class="tri bg-[#3949AB]"></span>
+            <span class="tri bg-[#7CB342]"></span>
+            <span class="tri bg-[#5E35B1]"></span>
+          </div>
+
+          <!-- ROW 2 -->
+          <div class="row second flex flex-wrap justify-center">
+            <span class="tri bg-[#5D4037]"></span>
+            <span class="tri bg-[#90A4AE]"></span>
+            <span class="tri bg-[#C2185B]"></span>
+            <span class="tri bg-[#00796B]"></span>
+            <span class="tri bg-[#EF6C00]"></span>
+            <span class="tri bg-[#303F9F]"></span>
+            <span class="tri bg-[#689F38]"></span>
+            <span class="tri bg-[#455A64]"></span>
+            <span class="tri bg-[#AD1457]"></span>
+            <span class="tri bg-[#00695C]"></span>
+            <span class="tri bg-[#E64A19]"></span>
+            <span class="tri bg-[#283593]"></span>
+            <span class="tri bg-[#558B2F]"></span>
+            <span class="tri bg-[#37474F]"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto bg-white px-6 py-28">
+      <h2 class="text-4xl sm:text-5xl text-center font-semibold mb-12">
+        Certifications
+      </h2>
+
+      <div
+        class="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-28"
+      >
+        <div
+          class="w-24 h-24 flex items-center justify-center hover:-translate-y-2 transition"
+        >
+          <img
+            src="img/IAF.png"
+            alt="IAF"
+            class="max-h-full max-w-full object-contain"
+          />
+        </div>
+        <div
+          class="w-24 h-24 flex items-center justify-center hover:-translate-y-2 transition"
+        >
+          <img
+            src="img/iso.png"
+            alt="ISO"
+            class="max-h-full max-w-full object-contain"
+          />
+        </div>
+        <div
+          class="w-24 h-24 flex items-center justify-center hover:-translate-y-2 transition"
+        >
+          <img
+            src="img/ISI.png"
+            alt="ISI"
+            class="max-h-full max-w-full object-contain"
+          />
+        </div>
+        <div
+          class="w-24 h-24 flex items-center justify-center hover:-translate-y-2 transition"
+        >
+          <img
+            src="img/JAS-ANZ.png"
+            alt="JAS-ANZ"
+            class="max-h-full max-w-full object-contain"
+          />
+        </div>
+        <div
+          class="w-24 h-24 flex items-center justify-center hover:-translate-y-2 transition"
+        >
+          <img
+            src="img/POWER.png"
+            alt="POWER"
+            class="max-h-full max-w-full object-contain"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="relative bg-[#000000] text-[#ebebeb]">
+      <!-- LEFT BACKGROUND IMAGE (LG+) -->
+      <div
+        class="absolute inset-y-0 left-0 w-[55%] hidden lg:block pointer-events-none"
+      >
+        <img
+          src="img/Frame 97.png"
+          alt=""
+          class="h-full w-full object-contain"
+        />
+      </div>
+
+      <!-- MOBILE / TABLET IMAGE -->
+      <div class="lg:hidden w-full px-4 pt-10 flex justify-center">
+        <img src="img/Frame 97.png" alt="" class="w-full max-w-md" />
+      </div>
+
+      <!-- CONTENT -->
+      <div class="relative max-w-7xl mx-auto px-4">
+        <div
+          class="max-w-[520px] mx-auto lg:ml-auto lg:mr-0 pt-24 sm:pt-28 md:pt-32 lg:pt-24 overflow-y-auto overflow-x-hidden no-scrollbar relative text-center lg:text-left"
+        >
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-8">
+            laminate manufacturing companies in india
+          </h2>
+
+          <!-- CARDS GRID -->
+          <div class="grid grid-cols-2 gap-6">
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Gujarat</span>
+              <span class="text-sm text-gray-400">7 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Maharashtra</span>
+              <span class="text-sm text-gray-400">6 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Rajasthan</span>
+              <span class="text-sm text-gray-400">4 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Karnataka</span>
+              <span class="text-sm text-gray-400">2 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Punjab</span>
+              <span class="text-sm text-gray-400">1 Store</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight"
+                >Chhattisgarh</span
+              >
+              <span class="text-sm text-gray-400">1 Store</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Odisha</span>
+              <span class="text-sm text-gray-400">2 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight">Telangana</span>
+              <span class="text-sm text-gray-400">1 Store</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight"
+                >Andhra Pradesh</span
+              >
+              <span class="text-sm text-gray-400">2 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight"
+                >Jammu and Kashmir</span
+              >
+              <span class="text-sm text-gray-400">2 Stores</span>
+            </div>
+
+            <div
+              class="bg-gray-600/20 p-6 rounded-xl hover:bg-gray-600/30 transition min-h-[110px] flex flex-col justify-between"
+            >
+              <span class="text-xl font-medium leading-tight"
+                >Madhya Pradesh</span
+              >
+              <span class="text-sm text-gray-400">3 Stores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- slider auto -->
+    <section class="bg-gray-100 py-16">
+      <div class="swiper max-w-7xl mx-auto px-6">
+        <div class="swiper-wrapper items-center">
+          <!-- Card 1 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/suntouch.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/arctonic.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/sonova.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/steeloak.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/Elegora.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/nerolam.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="swiper-slide flex justify-center">
+            <div
+              class="bg-white shadow-md rounded-xl p-4 w-56 h-32 flex items-center justify-center"
+            >
+              <img
+                src="img/brand/pixel-mica.png"
+                class="w-full h-full object-contain transform transition duration-300 hover:-translate-y-2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-white w-full px-10 py-10">
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      >
+        <!-- Logo -->
+        <div class="order-1">
+          <img class="h-16 mb-10" src="img/logo2.png" alt="" />
+          <img src="img/footer.png" alt="" />
+        </div>
+
+        <!-- Contact -->
+        <div class="text-red-600 order-2">
+          <h4 class="font-semibold text-lg mb-3">Contact Us</h4>
+          <p class="flex items-start gap-2 text-black mb-3">
+            <img src="img/location_on.svg" alt="Location" class="mt-1" />
+            <span>
+              SUNTOUCH LAMINATE PVT.LTD<br />
+              Navagam Road, Near Lilapar Chokadi,<br />
+              Morbi Dist: Morbi - 363641
+            </span>
+          </p>
+          <p class="flex items-start gap-2 text-black mb-3">
+            <img src="img/call-primary.svg" alt="Call" class="mt-1" />
+            <span class="cursor-pointer hover:underline transition"
+              >+91 98258 96998</span
+            >
+          </p>
+          <p class="flex items-start gap-2 text-black mb-3">
+            <img src="img/mail.svg" alt="Mail" class="mt-1" />
+            <span class="cursor-pointer hover:underline transition"
+              >info@suntouchlaminate.com</span
+            >
+          </p>
+        </div>
+
+        <!-- Company Links -->
+        <div class="text-red-600 order-4 lg:order-3">
+          <h4 class="font-semibold text-lg mb-3">Our Company</h4>
+          <ul class="text-gray-700 mb-3 cursor-pointer">
+            <li class="hover:underline transition">Home</li>
+            <li class="hover:underline transition">About Us</li>
+            <li class="hover:underline transition">Brands</li>
+            <li class="hover:underline transition">E-Catalogue</li>
+            <li class="hover:underline transition">Contact us</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="text-red-600 order-3 lg:order-4">
+          <h4 class="font-semibold text-lg mb-3">Social Media</h4>
+          <div class="flex gap-4 mt-2">
+            <a
+              href="#"
+              class="transform transition-transform duration-300 hover:scale-110"
+            >
+              <img src="img/facebook.svg" alt="Facebook" class="h-9" />
+            </a>
+            <a
+              href="#"
+              class="transform transition-transform duration-300 hover:scale-110"
+            >
+              <img src="img/instagram.svg" alt="Instagram" class="h-9" />
+            </a>
+            <a
+              href="#"
+              class="transform transition-transform duration-300 hover:scale-110"
+            >
+              <img src="img/whatsapp.svg" alt="Whatsapp" class="h-9" />
+            </a>
+            <a
+              href="#"
+              class="transform transition-transform duration-300 hover:scale-110"
+            >
+              <img src="img/linkedin.svg" alt="LinkedIn" class="h-9" />
+            </a>
+            <a
+              href="#"
+              class="transform transition-transform duration-300 hover:scale-110"
+            >
+              <img src="img/pinterest.svg" alt="Pinterest" class="h-9" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-8 mb-6 border-gray-200" />
+
+      <p class="text-center text-sm text-gray-500">
+        Copyright &copy;2026
+        <span class="font-medium text-gray-600">Suntouch Laminates</span>. All
+        rights reserved.
+      </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      //hamburger
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      // slide
+      const slides = [
+        "https://suntouch.s3.ap-south-1.amazonaws.com/sliderImages/Slider%20Image%203_1721044457.webp",
+        "https://suntouch.s3.ap-south-1.amazonaws.com/sliderImages/Slider%20Image%202_1721044432.webp",
+        "https://suntouch.s3.ap-south-1.amazonaws.com/sliderImages/Slider%20Image%201_1721044402.webp",
+      ];
+
+      const slideTexts = [
+        {
+          title: "Premium Laminates",
+          subtitle: "Style • Strength • Durability",
+        },
+        {
+          title: "Modern Surface Designs",
+          subtitle: "Crafted for Elegant Interiors",
+        },
+        { title: "Built to Last", subtitle: "Performance Meets Perfection" },
+      ];
+
+      const heroImage = document.getElementById("heroImage");
+      const heroImageMobile = document.getElementById("heroImageMobile");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn = document.getElementById("prevBtn");
+
+      let current = 0;
+      let interval;
+
+      function showSlide(index) {
+        // DESKTOP (SVG)
+        if (heroImage) {
+          const newImg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "image"
+          );
+          newImg.setAttribute("href", slides[index]);
+          newImg.setAttribute("clip-path", heroImage.getAttribute("clip-path"));
+          newImg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+          newImg.setAttribute("width", "100%");
+          newImg.setAttribute("height", "100%");
+          newImg.style.opacity = 0;
+          newImg.style.transition = "opacity 0.7s ease-in-out";
+
+          heroImage.parentNode.appendChild(newImg);
+
+          requestAnimationFrame(() => {
+            newImg.style.opacity = 1;
+            heroImage.style.opacity = 0;
+          });
+
+          setTimeout(() => {
+            heroImage.setAttribute("href", slides[index]); // update original
+            heroImage.style.opacity = 1;
+            newImg.remove();
+          }, 400);
+        }
+
+        // MOBILE
+        if (heroImageMobile) {
+          heroImageMobile.style.transition = "opacity 0.7s ease-in-out";
+          heroImageMobile.style.opacity = 0;
+          setTimeout(() => {
+            heroImageMobile.src = slides[index];
+            heroImageMobile.style.opacity = 1;
+          }, 400);
+        }
+
+        // TEXT
+        document.getElementById("heroTitleMobile").textContent =
+          slideTexts[index].title;
+        document.getElementById("heroSubtitleMobile").textContent =
+          slideTexts[index].subtitle;
+        document.getElementById("heroTitleDesktop").textContent =
+          slideTexts[index].title;
+        document.getElementById("heroSubtitleDesktop").textContent =
+          slideTexts[index].subtitle;
+      }
+
+      function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+        resetAuto();
+      }
+
+      function prevSlide() {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+        resetAuto();
+      }
+
+      function startAuto() {
+        interval = setInterval(nextSlide, 5000);
+      }
+
+      function resetAuto() {
+        clearInterval(interval);
+        startAuto();
+      }
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      showSlide(current);
+      startAuto();
+
+      // slider logo
+      new Swiper(".swiper", {
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        speed: 3000,
+        slidesPerView: "auto",
+        spaceBetween: 40,
+        breakpoints: {
+          640: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 6,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

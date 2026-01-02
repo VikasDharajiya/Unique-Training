@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suntouch Color Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .color-bar {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .color-bar .color {
+        width: 110px;
+        height: 96px;
+        clip-path: path(
+          "M52.2646 92.971C53.0329 94.312 54.9671 94.312 55.7354 92.971L107.285 2.99422C108.048 1.6609 107.086 0 105.549 0H2.45082C0.914176 0 -0.0484418 1.6609 0.715441 2.99422L52.2646 92.971Z"
+        );
+        margin-left: -50px; /* KEY: overlap */
+      }
+
+      .color-bar .color:first-child {
+        margin-left: 0;
+      }
+
+      /* flip shape */
+      .color-bar .flip {
+        transform: scaleY(-1);
+      }
+
+      /* row spacing */
+      .row {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="bg-gray-100 py-24">
+      <h2 class="text-center text-4xl font-semibold mb-16">Color Bar</h2>
+
+      <!-- ROW 1 -->
+      <div class="color-bar row">
+        <span class="color bg-[#E53935]"></span>
+        <span class="color flip bg-[#FB8C00]"></span>
+        <span class="color bg-[#FDD835]"></span>
+        <span class="color flip bg-[#43A047]"></span>
+        <span class="color bg-[#1E88E5]"></span>
+        <span class="color flip bg-[#8E24AA]"></span>
+        <span class="color bg-[#6D4C41]"></span>
+        <span class="color flip bg-[#B0BEC5]"></span>
+        <span class="color bg-[#D81B60]"></span>
+        <span class="color flip bg-[#00897B]"></span>
+        <span class="color bg-[#F4511E]"></span>
+        <span class="color flip bg-[#3949AB]"></span>
+        <span class="color bg-[#7CB342]"></span>
+        <span class="color flip bg-[#5E35B1]"></span>
+      </div>
+
+      <!-- ROW 2 (REVERSED) -->
+      <div class="color-bar">
+        <span class="color flip bg-[#5D4037]"></span>
+        <span class="color bg-[#90A4AE]"></span>
+        <span class="color flip bg-[#C2185B]"></span>
+        <span class="color bg-[#00796B]"></span>
+        <span class="color flip bg-[#EF6C00]"></span>
+        <span class="color bg-[#303F9F]"></span>
+        <span class="color flip bg-[#689F38]"></span>
+        <span class="color bg-[#455A64]"></span>
+        <span class="color flip bg-[#AD1457]"></span>
+        <span class="color bg-[#00695C]"></span>
+        <span class="color flip bg-[#E64A19]"></span>
+        <span class="color bg-[#283593]"></span>
+        <span class="color flip bg-[#558B2F]"></span>
+        <span class="color bg-[#37474F]"></span>
+      </div>
+    </section>
+  </body>
+</html>

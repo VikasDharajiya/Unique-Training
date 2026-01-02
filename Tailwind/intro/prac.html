@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="room relative w-full h-[500px]">
+      <img
+        id="floor"
+        src="img/floor1.avif"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <img
+        id="wall"
+        src="img/wall1.avif"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="controls flex gap-4 mt-4">
+      <button onclick="changeFloor('img/floor2.avif')">Floor 2</button>
+      <button onclick="changeWall('img/wall2.avif')">Wall 2</button>
+    </div>
+    <script>
+      function changeFloor(src) {
+        document.getElementById("floor").src = src;
+      }
+      function changeWall(src) {
+        document.getElementById("wall").src = src;
+      }
+    </script>
+  </body>
+</html>
