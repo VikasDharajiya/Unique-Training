@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 🌞 Light mode (default) */
+  :root {
+    --bg: #ffffff;
+    --text: #0f172a;
+    --primary: #2563eb;
+    --card: #f1f5f9;
+  }
+
+  /* 🌙 Dark mode */
+  .dark {
+    --bg: #020617;
+    --text: #e5e7eb;
+    --primary: #3b82f6;
+    --card: #0f172a;
+  }
+}
